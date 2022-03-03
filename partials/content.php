@@ -18,22 +18,35 @@
 
     <!-- Main content -->
     <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+      <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Data Lokasi</h5>
+                <a href="?page=lokasicreate"
+                  class="btn btn-success btn-sm float-right">
+                <i class="fa fa-plus-circle"></i>Tambah Data</a>
               </div>
+              <div class="card-body">
+    <table id="mytable" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama Lokasi</th>
+          <th>Opsi</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+        <th>No</th>
+        <th>Nama Lokasi</th>
+        <th>Opsi</th>
+        </tr>
+      </tfoot>
+      <tbody>
+      </tbody>
+    </table>
             </div>
+          </div>
+    </div>
 
             <div class="card card-primary card-outline">
               <div class="card-body">
@@ -81,4 +94,10 @@
     </div>
     <!-- /.content -->
 
-  <?php include "partials/scripts.php" ?>
+  <?php include_once "partials/scripts.php" ?>
+  <?php include_once "partials/scriptsdatatables.php" ?>
+  <script>
+    $(function() {
+      $('mytable').DataTables()
+    });
+  </script>
